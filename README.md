@@ -3,7 +3,10 @@
 Для виводу тексту доступні **тільки кириличні U8G2** шрифти.
 Тип шини та драйвер дисплея вказувати не потрібно.
 
+Приклад використання знаходиться тут: [Pixeler2PC](https://github.com/Kolodieiev/perfect_console/tree/main/Pixeler2PC)
+
 В якості рендера вікна використовується SFML версії 3.0.2. 
 Для збірки проєкту використовуйте компілятор для вашої ОС, що рекомендується розробником SFML за цим посиланням: [Download SFML 3.0.2](https://www.sfml-dev.org/download/sfml/3.0.2/).
 
-![alt text](image/Arduino_GFX2PC.png)
+![alt text](image/Arduino_GFX2PC.png)<br>
+![alt text](image/Pixeler2PC.png)
