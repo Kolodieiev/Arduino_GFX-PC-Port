@@ -1,11 +1,6 @@
 #pragma once
 #pragma GCC optimize("O3")
-
 #include <SFML/Graphics.hpp>
-#include <cstdint>
-#include <iostream>
-#include <mutex>
-#include <thread>
 #include <vector>
 
 #include "Arduino_Canvas.h"
@@ -58,16 +53,7 @@ namespace pixeler
     void init(sf::RenderWindow* window);
 
   private:
-#ifdef DOUBLE_BUFFERRING
-    static void displayRendererTask(void* params);
-#endif  // DOUBLE_BUFFERRING
-
-  private:
-    Arduino_Canvas _canvas;
-
-#ifdef DOUBLE_BUFFERRING
-    std::mutex counter_mutex;
-#endif  // DOUBLE_BUFFERRING
+    Arduino_Canvas *_canvas;
 
 #ifdef SHOW_FPS
     uint64_t _frame_timer{0};
@@ -75,14 +61,7 @@ namespace pixeler
     uint16_t _temp_frame_counter{0};
 #endif  // SHOW_FPS
 
-#ifdef DOUBLE_BUFFERRING
-    volatile bool _has_frame{false};
-#endif  // DOUBLE_BUFFERRING
-
-    volatile bool _take_screenshot{false};
     bool _is_buff_changed{false};
-
-    std::mutex _renderer_mutex;
   };
 
   extern DisplayWrapper _display;
